@@ -1,0 +1,36 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="890" measuredH="542" mockupW="830" mockupH="522">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="60" y="20" w="830" h="522" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//knowlege4people.vn/foods</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Image" x="75" y="95" w="-1" h="-1" measuredW="64" measuredH="64" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>home%26bm%3Bhome.bmml%26bm%3Bhome.bmml%26bm%3Bhome.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2215%2C75%2C79%2C139%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%227%22/%3E</map>
+        <src>./images/home.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Image" x="152" y="95" w="-1" h="-1" measuredW="64" measuredH="64" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./images/Food.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Image" x="229" y="95" w="-1" h="-1" measuredW="64" measuredH="64" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>lyrics%26bm%3Blyrics.bmml%26bm%3Blyrics.bmml%26bm%3Blyrics.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22169%2C75%2C233%2C139%22%20href%3D%22lyrics.bmml%22%20alt%3D%22lyrics%22%20id%3D%2210%22/%3E</map>
+        <src>./images/lyrics.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Image" x="306" y="95" w="64" h="64" measuredW="64" measuredH="64" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>contact%26bm%3Bcontact.bmml%26bm%3Bcontact.bmml%26bm%3Bcontact.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22246%2C75%2C310%2C139%22%20href%3D%22contact.bmml%22%20alt%3D%22contact%22%20id%3D%2211%22/%3E</map>
+        <src>./images/contacts.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::HRule" x="75" y="159" w="800" h="-1" measuredW="100" measuredH="10" zOrder="5" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>
