@@ -16,6 +16,7 @@ var mean = require('meanio'),
   mongoStore = require('connect-mongo')(session),
   helpers = require('view-helpers'),
   flash = require('connect-flash'),
+  _ = require('lodash'),
   config = mean.loadConfig();
 
 module.exports = function(app, passport, db) {

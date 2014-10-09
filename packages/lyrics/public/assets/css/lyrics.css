@@ -1,0 +1,25 @@
+.lyrics-example h1: {
+	background-color: purple
+}
+
+.lyrics-letter {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-letter {
+/*  width: 40px;
+  height: 40px;*/
+  width: 3.6%;
+  height: 4%;
+}
+
+.btn-letter.btn-all {
+  text-indent: -5px;
+}
+
+.container.button-letter{
+  width: 100%;
+  margin: auto;
+}

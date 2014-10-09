@@ -1,0 +1,11 @@
+<div class="container button-letter">
+  <button 
+    type="button" class="btn-alphabet btn btn-default btn-letter" 
+    ng-repeat="letter in alphabet" 
+    ng-click="setActiveLetter(letter)" 
+    ng-class="{'btn-success': letter==activeLetter, 'btn-all': letter=='All'}">
+    {{ letter | uppercase }}
+  </button>
+
+  <h1>Test Directive {{ activeLetter }} </h1>
+</div>
