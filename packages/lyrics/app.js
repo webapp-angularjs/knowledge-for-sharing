@@ -24,6 +24,12 @@ Lyrics.register(function(app, auth, database) {
         menu: 'main'
     });
 
+    Lyrics.menus.add({
+        'roles': ['authenticated'],
+        'title': 'Create New Lyric',
+        'link': 'create lyric'
+    });
+
     /**
     //Uncomment to use. Requires meanio@0.3.7 or above
     // Save settings with callback
@@ -45,7 +51,7 @@ Lyrics.register(function(app, auth, database) {
         //you now have the settings object
     });
     */
-    
+   
     Lyrics.aggregateAsset('css', 'lyrics.css');
 
     return Lyrics;

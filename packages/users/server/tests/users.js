@@ -24,7 +24,7 @@ var should = require('should'),
 /**
  * Globals
  */
-var user1, user2;
+var user1;
 
 /**
  * Test Suites
@@ -35,20 +35,11 @@ describe('<Unit Test>', function() {
     before(function(done) {
       user1 = {
         name: 'Full name',
-        email: 'test' + getRandomString() + '@test.com',
-        username: getRandomString(),
+        email: 'test_' + getRandomString() + '@test.com',
+        username: 'username',
         password: 'password',
         provider: 'local'
       };
-
-      user2 = {
-        name: 'Full name',
-        email: 'test' + getRandomString() + '@test.com',
-        username: getRandomString(),
-        password: 'password',
-        provider: 'local'
-      };
-
       done();
     });
 
@@ -58,14 +49,7 @@ describe('<Unit Test>', function() {
           email: user1.email
         }, function(err, users) {
           users.should.have.length(0);
-
-          User.find({
-            email: user2.email
-          }, function(err, users) {
-            users.should.have.length(0);
-            done();
-          });
-
+          done();
         });
       });
 
@@ -77,7 +61,6 @@ describe('<Unit Test>', function() {
           _user.remove();
           done();
         });
-
       });
 
       it('should check that roles are assigned and created properly', function(done) {
@@ -95,7 +78,6 @@ describe('<Unit Test>', function() {
             done();
           });
         });
-
       });
 
       it('should confirm that password is hashed correctly', function(done) {
@@ -110,7 +92,6 @@ describe('<Unit Test>', function() {
           _user.remove(function(err) {
             done();
           });
-
         });
       });
 
@@ -402,7 +383,8 @@ describe('<Unit Test>', function() {
        *  _user1.remove();
        *  _user2.remove();
        */
-
+      var _user1 = new User(user1);
+      _user1.remove();
       done();
     });
   });

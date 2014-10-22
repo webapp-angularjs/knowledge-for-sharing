@@ -102,3 +102,5 @@ module.exports = function(app, passport, db) {
   // Connect flash for flash messages
   app.use(flash());
 };
+
+require('./prototype');

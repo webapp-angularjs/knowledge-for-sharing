@@ -1,0 +1,68 @@
+<section data-ng-controller="LyricsController">
+  <div class="container">
+    <div class="container-left">
+      <div class="lyric-form">
+        <form name="lyricForm" class="form-horizontal col-md-6 create-lyric" role="form" data-ng-submit="create(lyricForm.$valid)" novalidate>
+          <!-- song name -->
+          <div class="form-group" ng-class="{ 'has-error': submitted && lyricForm.songName.$invalid}">
+            <label mean-token="'create-song-name'" class="col-md-4 control-label">
+              Song name
+              <span class="glyphicon glyphicon-asterisk"></span>
+            </label>
+            <div class="col-md-8">
+              <input name="songName" type="text" class="form-control" data-ng-model="songName" id="song-name" placeholder="Song name" required>
+              <div ng-show="submitted && lyricForm.songName.$invalid" class="help-block">
+                <p ng-show="lyricForm.songName.$error.required">
+                  Song name is required
+                </p>
+              </div>
+            </div>
+          </div>     
+          <!-- author -->
+          <div class="form-group" ng-class="{ 'has-error': submitted && lyricForm.songAuthor.$invalid}">
+            <label mean-token="'create-author'" class="col-md-4 control-label">
+              Author
+              <span class="glyphicon glyphicon-asterisk"></span>
+            </label>
+            <div class="col-md-8">
+              <input name="songAuthor" type="text" class="form-control" data-ng-model="songAuthor" id="song-author"
+                typeahead="author as author.name for author in searchAuthors($viewValue)"
+                placeholder="Author" required>
+              <div ng-show="submitted && lyricForm.songAuthor.$invalid" class="help-block">
+                <p ng-show="lyricForm.songAuthor.$error.required">
+                  Author is required
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- song lyric -->
+          <div class="form-group" ng-class="{ 'has-error': submitted && lyricForm.songContent.$invalid}">
+            <label mean-token="'create-song-lyric'" class="col-md-4 control-label">
+              Song lyric
+              <span class="glyphicon glyphicon-asterisk"></span>
+            </label>
+            <div class="col-md-8">
+              <textarea name="songContent" type="text" class="form-control" data-ng-model="songContent" id="song-content" placeholder="Song lyric" required>
+              </textarea>
+              <div ng-show="submitted && lyricForm.songContent.$invalid" class="help-block">
+                <p ng-show="lyricForm.songContent.$error.required">
+                  Song lyric is required
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- submit -->
+          <div class="form-group">
+            <div class="col-md-offset-4 col-md-8">
+              <button type="submit" class="btn btn-info">
+                Create
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="container-right">
+    </div>
+  </div>
+</section>
