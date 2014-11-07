@@ -2,53 +2,70 @@
   float: left;
   width: 70%;
 }
+
 .container .container-right {
   width: 30%;
   float: right;
 }
+
 .container .button-letters {
   width: 100%;
   margin: auto;
   padding: 0 0 10px 0;
 }
+
 .container .button-letters .btn {
   width: 3.6%;
 }
+
 .container .button-letters .btn-all {
   width: 5%;
 }
+
 .container .search {
   width: 100%;
   margin: auto;
 }
+
 .container .search form {
   float: right;
   width: 35.5%;
 }
+
 .container .search form .form-group {
   width: 300px;
   float: left;
   padding: 0 5px 0 0;
 }
+
 .container-left .lyric-form .create-lyric .form-group input {
   width: 600px;
   max-width: 600px;
 }
+
 .container-left .lyric-form .create-lyric .form-group .dropdown-menu {
   width: 600px;
   max-width: 600px;
 }
+
 .container-left .lyric-form .create-lyric .form-group .control-require {
   color: blue;
 }
+
 .container-left .lyric-form .create-lyric .form-group .glyphicon-asterisk {
   color: red;
   top: -4px;
   font-size: 10px;
 }
+
 .container-left .lyric-form .create-lyric .form-group textarea {
   width: 600px;
   height: 350px;
   max-height: 350px;
   max-width: 600px;
+}
+
+.set-bg-search {
+  padding-left: 32px;
+  background: #fff url(/global/assets/img/bg-search.png) no-repeat left top;
 }

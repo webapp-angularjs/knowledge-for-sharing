@@ -20,21 +20,18 @@ exports.lyric = function(req, res, next, id) {
  * Create an lyric
  */
 exports.create = function(req, res) {
-  // req.body.song_name = req.body.song_name.allTrim();
-  // req.body.song_content = req.body.song_content.allTrim();
-  
-  // req.body.song_name_utf8 = req.body.song_name.toUtf8Standard();
-  // req.body.song_content_utf8 = req.body.song_content.toUtf8Standard();
+  res.status(200).json({
+    errorCode: 'Cannot save the song lyric'
+  });  
+  // var lyric = new Lyric(req.body);
+  // lyric.user = req.user;
 
-  var lyric = new Lyric(req.body);
-  lyric.user = req.user;
-
-  lyric.save(function(err) {
-    if(err) {
-      return res.json(500, {
-        error: 'Cannot save the song lyric'
-      });
-    }
-    res.json(lyric);
-  });
+  // lyric.save(function(err) {
+  //   if(err) {
+  //     return res.json(500, {
+  //       error: 'Cannot save the song lyric'
+  //     });
+  //   }
+  //   res.json(lyric);
+  // });
 };

@@ -5,7 +5,7 @@
         <form name="lyricForm" class="form-horizontal col-md-6 create-lyric" role="form" data-ng-submit="create(lyricForm.$valid)" novalidate>
           <!-- song name -->
           <div class="form-group" ng-class="{ 'has-error': submitted && lyricForm.songName.$invalid}">
-            <label mean-token="'create-song-name'" class="col-md-4 control-label">
+            <label mean-token="'create-song-name'" for="song-name" class="col-md-4 control-label">
               Song name
               <span class="glyphicon glyphicon-asterisk"></span>
             </label>
@@ -20,7 +20,7 @@
           </div>     
           <!-- author -->
           <div class="form-group" ng-class="{ 'has-error': submitted && lyricForm.songAuthor.$invalid}">
-            <label mean-token="'create-author'" class="col-md-4 control-label">
+            <label mean-token="'create-author'" for="song-author" class="col-md-4 control-label">
               Author
               <span class="glyphicon glyphicon-asterisk"></span>
             </label>
@@ -37,7 +37,7 @@
           </div>
           <!-- song lyric -->
           <div class="form-group" ng-class="{ 'has-error': submitted && lyricForm.songContent.$invalid}">
-            <label mean-token="'create-song-lyric'" class="col-md-4 control-label">
+            <label mean-token="'create-song-lyric'" for="song-content" class="col-md-4 control-label">
               Song lyric
               <span class="glyphicon glyphicon-asterisk"></span>
             </label>
