@@ -15,101 +15,47 @@ angular.module('mean.lyrics')
   .factory('Lyrics', ['$resource', '$http', '$q', 'Authors', 'LyricResource', 'flashMessage', 
     function($resource, $http, $q, Authors, LyricResource, flashMessage){
     return {
-      createLyric: function(data, done) {
-        console.log('-------------------------------------------------------------');
-        console.log(data);
-        console.log('-------------------------------------------------------------');
-
-        var resource = new LyricResource(data);
+      all: function() {
+        var delay = $q.defer();
+        $http.get('/lyrics/all').success(function(data){
+          delay.resolve(data);
+        })
+        return delay.promise;
+      },
+      create: function(author, song, content, done) {
+        var resource = new LyricResource({
+          song_name: song,
+          song_content: content,
+          author: author          
+        });
         resource.$save(
           // when success
           function(response) {
-            console.log('----------------------------success----------------------------');
-            console.log(response);
-            console.log('---------------------------------------------------------------');
-            // flashMessage.success({
-            //   message: response.errorCode,
-            //   seconds: 5
-            // });
+            flashMessage.success({
+              message: response.status,
+              callback: done
+            });
           },
           // when not success
           function(response) {
-            console.log('----------------------------failed-----------------------------');
-            console.log(response);
-            console.log('---------------------------------------------------------------');
             flashMessage.error({
               message: response.data.errorCode,
-              seconds: 5
+              callback: done
             });
           }
         );
-        return;
-
-        // var resource = new LyricResource(data);
-
-        // resource.$save(function(response) {
-        //   flashMessage.success({
-        //     message: 'Saved information about lyric.',
-        //     seconds: 5
-        //   });
-        //   console.log ('response:');
-        //   console.log (resource);
-
-        //   done();
-        // });
       },
-      createAuthor: function(_this, author, song, content, done) {
-        Authors.create(author).then(
-          function(response){
-            flashMessage.success({
-              message: 'Saved information about author.',
-              seconds: 5
-            });
-            _this.createLyric({
-              song_name: song,
-              song_content: content,
-              author: response._id                  
-            }, done);
-          }, 
-          function(response){
-            flashMessage.error({
-              message: response.data.error,
-              seconds: 5
-            });                  
+      search: function(query) {
+        var delay = $q.defer();
+        $http.get('/lyrics/search', {
+          params: {
+            q: query
           }
-        )
-      },
-      create: function(author, song, content, done) {
-        /**
-         * before save data need check with author specify already in DB?
-         * if not yet then save information basic of this author
-         * else will get author id for request save data
-         */
-        // var _this = this;
-        // if (_.isString(author)) {
-        //   Authors.findAuthor(author).then(function(data){
-        //     if (data.length === 0) {
-        //       _this.createAuthor(_this, author, song, content, done);
-        //     } else {
-        //       _this.createLyric({
-        //         song_name: song,
-        //         song_content: content,
-        //         author: data._id                  
-        //       }, done);
-        //     }
-        //   });
-        // } else {
-        //   _this.createLyric({
-        //     song_name: song,
-        //     song_content: content,
-        //     author: author.id                  
-        //   }, done);
-        // }
-        this.createLyric({
-          song_name: song,
-          song_content: content,
-          author: author
+        }).success(function(data){
+          delay.resolve(data);
         });
-      }
+
+        return delay.promise;
+      }            
     };
   }]);

@@ -58,4 +58,15 @@ AuthorSchema.pre('save', function(next) {
   next();
 });
 
+/**
+ * define some method for model
+ */
+AuthorSchema.static({
+  findAuthor: function(author, cb) {
+    return this.find({
+      name_utf8: author.allTrim().toUtf8Standard()
+    }, cb)
+  }
+});
+
 mongoose.model('Author', AuthorSchema);

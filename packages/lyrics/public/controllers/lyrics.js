@@ -6,6 +6,12 @@ angular.module('mean.lyrics').controller('LyricsController', ['$scope', 'Global'
 		$scope.package = {
 			name: 'lyrics'
 		};
+
+    $scope.lyrics = [];
+
+    Lyrics.all().then(function(data) {
+      $scope.lyrics = data.lyrics;
+    });
     /**
      * Submit form
      * Method: create
@@ -27,9 +33,9 @@ angular.module('mean.lyrics').controller('LyricsController', ['$scope', 'Global'
     };
 
     $scope.reset = function() {
-      $scope.songAuthor = '';
-      $scope.songName = '';
-      $scope.songContent = '';
+      // $scope.songAuthor = '';
+      // $scope.songName = '';
+      // $scope.songContent = '';
     }
 
     $scope.searchAuthors = function(value) {
@@ -40,6 +46,18 @@ angular.module('mean.lyrics').controller('LyricsController', ['$scope', 'Global'
           });
         });
     };
-	}
 
+    $scope.searchLyrics = function(value) {
+      return Lyrics.search(value)
+        .then(function(data) {
+          return data.lyrics.map(function(item){
+            return item;
+          });
+        });
+    };
+
+    $scope.getTemplateMore = function(content) {
+      return content.substr(0, 120) + '...' ;
+    };
+	}
 ]);

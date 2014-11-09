@@ -19,7 +19,7 @@ String.prototype.toUtf8Standard = function() {
 };
 
 String.prototype.titleCase = function(){
-  return this.replace(/(^([a-z])| [a-z])/g, function(_, match){ return match.toUpperCase();})
+  return this.replace(/(^(.)| (.))/g, function(_, match){ return match.toUpperCase();})
 };
 
 String.prototype.allTrim = function(){

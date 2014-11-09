@@ -10,7 +10,9 @@
               <span class="glyphicon glyphicon-asterisk"></span>
             </label>
             <div class="col-md-8">
-              <input name="songName" type="text" class="form-control" data-ng-model="songName" id="song-name" placeholder="Song name" required>
+              <input name="songName" type="text" class="form-control" data-ng-model="songName" id="song-name" 
+              typeahead="song as song.name for song in searchLyrics($viewValue)"
+              placeholder="Song name" title-case-directive required>
               <div ng-show="submitted && lyricForm.songName.$invalid" class="help-block">
                 <p ng-show="lyricForm.songName.$error.required">
                   Song name is required
@@ -27,7 +29,7 @@
             <div class="col-md-8">
               <input name="songAuthor" type="text" class="form-control" data-ng-model="songAuthor" id="song-author"
                 typeahead="author as author.name for author in searchAuthors($viewValue)"
-                placeholder="Author" required>
+                placeholder="Author" title-case-directive required>
               <div ng-show="submitted && lyricForm.songAuthor.$invalid" class="help-block">
                 <p ng-show="lyricForm.songAuthor.$error.required">
                   Author is required
@@ -63,6 +65,18 @@
       </div>
     </div>
     <div class="container-right">
+      <div>
+        <div ng-repeat="lyric in lyrics">
+          <div class="lyric">
+            <div class="song">{{ lyric.name }}</div>
+            <div class="author-content">
+              <div class="author-content-left"> {{ lyric.author.name }}</div>
+              <div class="author-content-right"> {{ getTemplateMore(lyric.content) }}</div>            
+            </div>
+            <div class="more"><a href="#">More ...</a></div>
+          </div>        
+        </div>        
+      </div>
     </div>
   </div>
 </section>

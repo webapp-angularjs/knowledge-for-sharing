@@ -65,7 +65,52 @@
   max-width: 600px;
 }
 
+.container-right .lyric {
+  border: 1px solid #ccc;
+  padding: 5px 0 5px 0;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  background: #a4b4ca url(/lyrics/assets/img/header-bg.png);
+  cursor: pointer;
+}
+
+.container-right .lyric .song {
+  color: red;
+  text-align: left;
+  padding-left: 5px;
+  background-color: #ccc;
+}
+
+.container-right .lyric .author-content {
+  width: 100%;
+  height: 85px;
+  background-color: whitesmoke;
+}
+
+.container-right .lyric .author-content .author-content-left {
+  color: blue;
+  width: 30%;
+  float: left;
+  padding: 3px;
+}
+
+.container-right .lyric .author-content .author-content-right {
+  color: purple;
+  width: 70%;
+  float: left;
+/*  text-overflow:ellipsis;
+  overflow: hidden;
+  white-space: nowrap;*/
+}
+
+.container-right .lyric .more {
+  color: green;
+  text-align: right;
+  padding-right: 5px;
+  background-color: #ccc;
+}
+
 .set-bg-search {
   padding-left: 32px;
-  background: #fff url(/global/assets/img/bg-search.png) no-repeat left top;
+  background: #fff url(/lyrics/assets/img/bg-search.png) no-repeat left top;
 }

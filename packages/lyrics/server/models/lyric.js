@@ -75,4 +75,23 @@ LyricSchema.pre('save', function(next) {
   next();
 });
 
+LyricSchema.pre('update', function(next) {
+  console.log('call pre update');
+})
+
+/**
+ * define some method for model
+ */
+LyricSchema.static({
+  findLyric: function(song, author, cb) {
+    return this.find({
+      song_name_utf8: song.allTrim().toUtf8Standard(),
+      author: author
+    }, cb)
+  },
+  getAll: function(cb) {
+    return this.find().populate('author', '_id name').exec(cb)
+  }
+});
+
 mongoose.model('Lyric', LyricSchema);
