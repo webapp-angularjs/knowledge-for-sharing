@@ -15,9 +15,16 @@ angular.module('mean.lyrics')
   .factory('Lyrics', ['$resource', '$http', '$q', 'Authors', 'LyricResource', 'flashMessage', 
     function($resource, $http, $q, Authors, LyricResource, flashMessage){
     return {
-      all: function() {
+      all: function(from, limit) {
+        limit = limit || 10;
+        from = from || 0;
         var delay = $q.defer();
-        $http.get('/lyrics/all').success(function(data){
+        $http.get('/lyrics/all', {
+          params: {
+            limit: limit,
+            from: from
+          }
+        }).success(function(data){
           delay.resolve(data);
         })
         return delay.promise;

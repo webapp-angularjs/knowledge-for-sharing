@@ -117,7 +117,7 @@ exports.search = function(req, res) {
 };
 
 exports.all = function(req, res) {
-  Lyric.getAll(function(err, data) {
+  Lyric.getAll(req.query, function(err, data) {
     if(err) return res.status(200).json({
       lyrics: []
     });

@@ -8,9 +8,15 @@ angular.module('mean.lyrics').controller('LyricsController', ['$scope', 'Global'
 		};
 
     $scope.lyrics = [];
+    $scope.busy = false;
+    $scope.from = 0;
+    $scope.limit = 10;
+    $scope.limit = 5;
+    $scope.seleted  = -1;
 
-    Lyrics.all().then(function(data) {
+    Lyrics.all($scope.from, $scope.limit).then(function(data) {
       $scope.lyrics = data.lyrics;
+      $scope.from += $scope.limit;
     });
     /**
      * Submit form
@@ -22,7 +28,7 @@ angular.module('mean.lyrics').controller('LyricsController', ['$scope', 'Global'
         /**
          * begin call Lyrics service to insert new data or updata data
          */
-        Lyrics.create(this.songAuthor, this.songName, this.songContent, $scope.reset);
+        Lyrics.create(this.songAuthor, this.songName, this.songContent, $scope.refreshList);
       } else {
         /**
          * [flag show to view know submitted and will show error message if error happend]
@@ -32,10 +38,19 @@ angular.module('mean.lyrics').controller('LyricsController', ['$scope', 'Global'
       }
     };
 
+    $scope.resetForm = function() {
+      $scope.reset();
+    }
+
+    $scope.refreshList = function() {
+      $scope.reset();
+    }
+
     $scope.reset = function() {
-      // $scope.songAuthor = '';
-      // $scope.songName = '';
-      // $scope.songContent = '';
+      $scope.songAuthor = '';
+      $scope.songName = '';
+      $scope.songContent = '';
+      $scope.seleted = -1;
     }
 
     $scope.searchAuthors = function(value) {
@@ -58,6 +73,24 @@ angular.module('mean.lyrics').controller('LyricsController', ['$scope', 'Global'
 
     $scope.getTemplateMore = function(content) {
       return content.substr(0, 120) + '...' ;
+    };
+
+    $scope.loadMore = function() {
+      if($scope.busy) return;
+      $scope.budy = true;
+
+      Lyrics.all($scope.from, $scope.limit).then(function(data) {
+        $scope.lyrics = _.union($scope.lyrics, data.lyrics);
+        $scope.busy = false;
+        if (data.lyrics.length !== 0) $scope.from += $scope.limit;
+      });      
+    };
+
+    $scope.loadLyric = function(index, lyric) {
+      $scope.songContent = lyric.content;
+      $scope.songName = lyric.name;
+      $scope.songAuthor = lyric.author;
+      $scope.seleted = index;
     };
 	}
 ]);

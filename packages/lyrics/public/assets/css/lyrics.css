@@ -72,6 +72,11 @@
   border-radius: 3px;
   background: #a4b4ca url(/lyrics/assets/img/header-bg.png);
   cursor: pointer;
+  margin-left: -40px;
+}
+
+.container-right .lyric.seleted {
+  background: blue;
 }
 
 .container-right .lyric .song {
@@ -98,9 +103,19 @@
   color: purple;
   width: 70%;
   float: left;
+  padding: 0 0 0 5px;
 /*  text-overflow:ellipsis;
   overflow: hidden;
   white-space: nowrap;*/
+}
+
+.container-right .lyricList  {
+  height: 500px;
+  overflow: auto;
+}
+
+.container-right .lyricList li {
+  list-style-type: none;
 }
 
 .container-right .lyric .more {

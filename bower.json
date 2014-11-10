@@ -15,6 +15,7 @@
     "lodash": "~2.4.1",
     "typeahead.js": "~0.10.5",
     "flash-message": "*",
-    "my-directives": "*"
+    "my-directives": "*",
+    "ngInfiniteScroll": "~1.1.2"
   }
 }

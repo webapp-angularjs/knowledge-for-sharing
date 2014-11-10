@@ -15,7 +15,8 @@
         "bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
         "bower_components/lodash/dist/lodash.js",
         "bower_components/flash-message/flash-message.js",
-        "bower_components/my-directives/my-directives.js"
+        "bower_components/my-directives/my-directives.js",
+        "bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"
       ]
     }
   }

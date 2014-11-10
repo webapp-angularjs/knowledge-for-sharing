@@ -89,8 +89,9 @@ LyricSchema.static({
       author: author
     }, cb)
   },
-  getAll: function(cb) {
-    return this.find().populate('author', '_id name').exec(cb)
+  getAll: function(limit, cb) {
+    console.log(limit);
+    return this.find().populate('author', '_id name').skip(limit.from).limit(limit.limit).exec(cb)
   }
 });
 

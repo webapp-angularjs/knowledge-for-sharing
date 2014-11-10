@@ -59,13 +59,16 @@
               <button type="submit" class="btn btn-info">
                 Create
               </button>
+              <button type="button" ng-click="resetForm()" class="btn btn-info">
+                Reset
+              </button>
             </div>
           </div>
         </form>
       </div>
     </div>
     <div class="container-right">
-      <div>
+<!--       <div infinite-scroll="nextPage()" infinite-scroll-disabled="busy" infinite-scroll-distance="1">
         <div ng-repeat="lyric in lyrics">
           <div class="lyric">
             <div class="song">{{ lyric.name }}</div>
@@ -76,6 +79,21 @@
             <div class="more"><a href="#">More ...</a></div>
           </div>        
         </div>        
+        <div ng-show='busy'>Fetching data...</div>
+      </div> -->
+      <div class="lyricList" when-scrolled="loadMore()">
+        <ul>
+          <li ng-repeat="lyric in lyrics">
+            <div class="lyric" ng-class="{seleted: seleted === $index}" ng-click="loadLyric($index, lyric)">
+              <div class="song">{{ lyric.name }}</div>
+              <div class="author-content">
+                <div class="author-content-left"> {{ lyric.author.name }}</div>
+                <div class="author-content-right"> {{ getTemplateMore(lyric.content) }}</div>            
+              </div>
+              <div class="more"><a>More ...</a></div>
+            </div>                    
+          </li>
+        </ul>
       </div>
     </div>
   </div>
