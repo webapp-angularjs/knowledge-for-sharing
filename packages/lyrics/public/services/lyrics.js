@@ -12,8 +12,8 @@ angular.module('mean.lyrics')
       });  
     }
   ])
-  .factory('Lyrics', ['$resource', '$http', '$q', 'Authors', 'LyricResource', 'flashMessage', 
-    function($resource, $http, $q, Authors, LyricResource, flashMessage){
+  .factory('Lyrics', ['$rootScope', '$http', '$q', 'Authors', 'LyricResource', 'flashMessage', 
+    function($rootScope, $http, $q, Authors, LyricResource, flashMessage){
     return {
       all: function(from, limit) {
         limit = limit || 10;
@@ -38,6 +38,7 @@ angular.module('mean.lyrics')
         resource.$save(
           // when success
           function(response) {
+            $rootScope.$broadcast('message');
             flashMessage.success({
               message: response.status,
               callback: done

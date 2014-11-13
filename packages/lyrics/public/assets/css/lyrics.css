@@ -89,7 +89,15 @@
 .container-right .lyric .author-content {
   width: 100%;
   height: 85px;
-  background-color: whitesmoke;
+  /*background: #a4b4ca url(/lyrics/assets/img/content-bg.png);*/
+  background: rgb(208,228,247); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(208,228,247,1) 0%, rgba(115,177,231,1) 24%, rgba(10,119,213,1) 50%, rgba(83,159,225,1) 79%, rgba(135,188,234,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(208,228,247,1)), color-stop(24%,rgba(115,177,231,1)), color-stop(50%,rgba(10,119,213,1)), color-stop(79%,rgba(83,159,225,1)), color-stop(100%,rgba(135,188,234,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(208,228,247,1) 0%,rgba(115,177,231,1) 24%,rgba(10,119,213,1) 50%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(208,228,247,1) 0%,rgba(115,177,231,1) 24%,rgba(10,119,213,1) 50%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(208,228,247,1) 0%,rgba(115,177,231,1) 24%,rgba(10,119,213,1) 50%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(208,228,247,1) 0%,rgba(115,177,231,1) 24%,rgba(10,119,213,1) 50%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=0 ); /* IE6-9 */
 }
 
 .container-right .lyric .author-content .author-content-left {
@@ -99,14 +107,24 @@
   padding: 3px;
 }
 
+.container-right .lyric .author-content .author-content-left .author-content-avatar {
+  width: 85px;
+  height: 85px;
+}
+
 .container-right .lyric .author-content .author-content-right {
-  color: purple;
+  color: black;
   width: 70%;
   float: left;
   padding: 0 0 0 5px;
-/*  text-overflow:ellipsis;
-  overflow: hidden;
-  white-space: nowrap;*/
+
+  font-family: Cambria, serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: normal;
+  text-transform: normal;
+  letter-spacing: normal;
+  line-height: 1.3em;
 }
 
 .container-right .lyricList  {

@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
     Lyric = mongoose.model('Lyric'),
     authors = require('./authors'),
     Author = mongoose.model('Author'),
+    Canvas = require('canvas'),
     _ = require('lodash');
 
 /**
@@ -116,6 +117,58 @@ exports.search = function(req, res) {
   );
 };
 
+function calculateCenter (maxWidth, width) {
+  var center = (maxWidth - width) / 2;
+  return center;
+}
+
+function wrapText(canvas, context, text, x, y, maxWidth, lineHeight) {
+  var words = text.split(' ');
+  var line = '';
+  var wrap = false
+
+  for(var n = 0; n < words.length; n++) {
+    var testLine = line + words[n] + ' ';
+    var metrics = context.measureText(testLine);
+    var testWidth = metrics.width;
+    if (testWidth > maxWidth && n > 0) {
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      context.fillText(line, calculateCenter(maxWidth, line.length), y);
+      line = words[n] + ' ';
+      y += lineHeight;
+      wrap = true
+    }
+    else {
+      line = testLine;
+    }
+  }
+  
+  context.textAlign = 'center';
+  context.textBaseline = 'middle';
+  if (wrap) {
+    context.fillText(line, calculateCenter(maxWidth, line.length), y);
+  } else {
+    context.fillText(line, calculateCenter(maxWidth, line.length), canvas.height/2);
+  }
+}
+
+function generateAvater(text) {
+  var width = 85, height = 85
+  var canvas = new Canvas(width, height), 
+      ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = "#000000";
+  ctx.fillRect(0, 0, width, height - 5);
+
+  ctx.font = 'bold 12pt Arial';
+  ctx.fillStyle = "#ffffff";
+
+  wrapText(canvas, ctx, text, 2, 30, width, 25);
+
+  return canvas.toDataURL()
+}
+
 exports.all = function(req, res) {
   Lyric.getAll(req.query, function(err, data) {
     if(err) return res.status(200).json({
@@ -130,7 +183,8 @@ exports.all = function(req, res) {
             id: item.author._id,
             name: item.author.name
           },
-          id: item._id
+          id: item._id,
+          avatar: generateAvater(item.author.name)
         }
       })
     });

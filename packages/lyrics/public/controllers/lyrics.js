@@ -1,23 +1,16 @@
 'use strict';
 
-angular.module('mean.lyrics').controller('LyricsController', ['$scope', 'Global', 'Lyrics', 'Authors',
-	function($scope, Global, Lyrics, Authors, flashMessage) {
+angular.module('mean.lyrics').controller('LyricsController', ['$rootScope', '$scope', 'Global', 'Lyrics', 'Authors',
+	function($rootScope, $scope, Global, Lyrics, Authors, flashMessage) {
 		$scope.global = Global;
 		$scope.package = {
 			name: 'lyrics'
 		};
 
-    $scope.lyrics = [];
-    $scope.busy = false;
-    $scope.from = 0;
-    $scope.limit = 10;
-    $scope.limit = 5;
-    $scope.seleted  = -1;
-
-    Lyrics.all($scope.from, $scope.limit).then(function(data) {
-      $scope.lyrics = data.lyrics;
-      $scope.from += $scope.limit;
-    });
+    $rootScope.$on('message', function(){
+      $scope.initData();
+      $scope.loadMore();
+    })
     /**
      * Submit form
      * Method: create
@@ -46,11 +39,18 @@ angular.module('mean.lyrics').controller('LyricsController', ['$scope', 'Global'
       $scope.reset();
     }
 
+    $scope.initData = function(){
+      $scope.busy = false;
+      $scope.from = 0;
+      $scope.limit = 10;
+      $scope.limit = 5;
+      $scope.seleted  = -1;      
+    }
+
     $scope.reset = function() {
       $scope.songAuthor = '';
       $scope.songName = '';
       $scope.songContent = '';
-      $scope.seleted = -1;
     }
 
     $scope.searchAuthors = function(value) {
@@ -80,7 +80,11 @@ angular.module('mean.lyrics').controller('LyricsController', ['$scope', 'Global'
       $scope.budy = true;
 
       Lyrics.all($scope.from, $scope.limit).then(function(data) {
-        $scope.lyrics = _.union($scope.lyrics, data.lyrics);
+        if ($scope.from === 0) {
+          $scope.lyrics = data.lyrics;
+        } else {
+          $scope.lyrics = _.union($scope.lyrics, data.lyrics);
+        }
         $scope.busy = false;
         if (data.lyrics.length !== 0) $scope.from += $scope.limit;
       });      
@@ -92,5 +96,8 @@ angular.module('mean.lyrics').controller('LyricsController', ['$scope', 'Global'
       $scope.songAuthor = lyric.author;
       $scope.seleted = index;
     };
+
+    $scope.initData();
+    $scope.loadMore();
 	}
 ]);
