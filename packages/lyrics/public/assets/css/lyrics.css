@@ -27,9 +27,15 @@
   margin: auto;
 }
 
+.container .line-break {
+  border-bottom: 1pt solid #ccc;
+  height: 40px;
+}
+
 .container .search form {
   float: right;
-  width: 35.5%;
+  /*width: 35.5%;*/
+  width: 34%;
 }
 
 .container .search form .form-group {
@@ -146,4 +152,18 @@
 .set-bg-search {
   padding-left: 32px;
   background: #fff url(/lyrics/assets/img/bg-search.png) no-repeat left top;
+}
+
+.top-header {
+  height: 100px;
+  background: #fff;
+  border-top: 5px solid #000;
+}
+
+.top-header .top-description {
+  padding: 30px;
+}
+
+.top-header .top-description .large-description{
+  text-transform: uppercase;
 }

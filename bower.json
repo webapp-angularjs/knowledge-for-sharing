@@ -16,6 +16,7 @@
     "typeahead.js": "~0.10.5",
     "flash-message": "*",
     "my-directives": "*",
-    "ngInfiniteScroll": "~1.1.2"
+    "ngInfiniteScroll": "~1.1.2",
+    "font-awesome": "~4.2.0"
   }
 }
