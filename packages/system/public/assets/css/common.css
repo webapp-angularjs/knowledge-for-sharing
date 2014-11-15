@@ -75,3 +75,7 @@ footer p {
   font-size: 13px;
   line-height: 5px;
 }
+
+a:hover {
+    text-decoration: none;
+}
