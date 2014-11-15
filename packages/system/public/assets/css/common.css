@@ -55,10 +55,11 @@ footer p {
   height: 110px;
   background: #fff;
   border-top: 5px solid #000;
+  background-image: url(/system/assets/img/header-bg.gif);
 }
 
 .top-header .top-description {
-  padding: 30px;
+  padding: 26px 26px 26px 34px;
 }
 
 .top-header .top-description .large-description{
@@ -69,6 +70,10 @@ footer p {
   color: #000;
 }
 
+.top-header .top-description .large-description a, .top-header .top-description .large-description a:hover {
+  color: #000;
+}
+
 .top-header .top-description .small-description{
   color: #ccc;
   text-transform: uppercase;
@@ -76,6 +81,14 @@ footer p {
   line-height: 5px;
 }
 
+.top-header .top-description .small-description a, .top-header .top-description .small-description a:hover {
+  color: #ccc;
+}
+
 a:hover {
     text-decoration: none;
+}
+
+body {
+  background-image: url(/system/assets/img/grid-bg.gif);
 }

@@ -97,6 +97,12 @@ angular.module('mean.lyrics').controller('LyricsController', ['$rootScope', '$sc
       $scope.seleted = index;
     };
 
+    $scope.setFilter = function(letter) {
+      console.log('--------------------------------------------------------------');
+      console.log('you selected letter:' + letter);
+      console.log('--------------------------------------------------------------');
+    }
+
     $scope.initData();
     $scope.loadMore();
 	}

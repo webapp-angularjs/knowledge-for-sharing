@@ -5,7 +5,8 @@ angular.module('mean.lyrics')
     return {
       restrict: 'E',
       scope: {
-        letters: '@'
+        letters: '@',
+        onSubmit: '&onSubmit'
       },
       controller: function($scope) {
         $scope.alphabet = ['All'].concat($scope.letters.split(''));
@@ -14,6 +15,7 @@ angular.module('mean.lyrics')
       link: function(scope, element, attrs) {
         scope.setActiveLetter = function(letter) {
           scope.activeLetter = letter;
+          scope.onSubmit()(letter);
         };
       },
       templateUrl: '/lyrics/directives/templates/letters.html'
