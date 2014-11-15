@@ -8,6 +8,10 @@
   float: right;
 }
 
+.container .lyric-letters {
+  margin-top: 150px;
+}
+
 .container .button-letters {
   width: 100%;
   margin: auto;
@@ -15,11 +19,19 @@
 }
 
 .container .button-letters .btn {
-  width: 3.6%;
+  /*width: 3.6%;*/
+  width: 38px;
+  margin: 0 3px 0 0;
+}
+
+.container .button-letters .btn:last-child {
+  margin: 0;
 }
 
 .container .button-letters .btn-all {
-  width: 5%;
+  /*width: 5%;*/
+  width: 73px;
+  margin: 0 3px 0 0;
 }
 
 .container .search {
@@ -35,13 +47,17 @@
 .container .search form {
   float: right;
   /*width: 35.5%;*/
-  width: 34%;
+  /*width: 34%;*/
+  /*margin: 0 -3.3% 0 0;*/
+  width: 371px;
 }
 
 .container .search form .form-group {
-  width: 300px;
+  /*width: 68%;*/
   float: left;
-  padding: 0 5px 0 0;
+  /*padding: 0 5px 0 0;*/
+  padding: 0 3px 0 0;
+  width: 300px;
 }
 
 .container-left .lyric-form .create-lyric .form-group input {
@@ -152,18 +168,4 @@
 .set-bg-search {
   padding-left: 32px;
   background: #fff url(/lyrics/assets/img/bg-search.png) no-repeat left top;
-}
-
-.top-header {
-  height: 100px;
-  background: #fff;
-  border-top: 5px solid #000;
-}
-
-.top-header .top-description {
-  padding: 30px;
-}
-
-.top-header .top-description .large-description{
-  text-transform: uppercase;
 }

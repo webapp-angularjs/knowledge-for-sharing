@@ -17,6 +17,7 @@
     "flash-message": "*",
     "my-directives": "*",
     "ngInfiniteScroll": "~1.1.2",
-    "font-awesome": "~4.2.0"
+    "font-awesome": "~4.2.0",
+    "angular-block-ui": "~0.1.1"
   }
 }

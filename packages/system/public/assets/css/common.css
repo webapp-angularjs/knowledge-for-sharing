@@ -46,3 +46,32 @@ footer p {
 /*.ng-valid.ng-dirty{*/
     /*border-color:#78FA89;*/
 /*}*/
+
+.container {
+  margin-top: 85px;
+}
+
+.top-header {
+  height: 110px;
+  background: #fff;
+  border-top: 5px solid #000;
+}
+
+.top-header .top-description {
+  padding: 30px;
+}
+
+.top-header .top-description .large-description{
+  text-transform: uppercase;
+  font-family: FontAwesome;
+  font-size: 25px;
+  font-weight: 700;  
+  color: #000;
+}
+
+.top-header .top-description .small-description{
+  color: #ccc;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 5px;
+}

@@ -20,7 +20,6 @@ Lyrics.register(function(app, auth, database) {
     Lyrics.menus.add({
         title: 'Lyrics',
         link: 'lyrics',
-        roles: ['authenticated'],
         menu: 'main'
     });
 
