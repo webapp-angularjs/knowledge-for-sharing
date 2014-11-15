@@ -63,6 +63,7 @@
 .container-left .lyric-form .create-lyric .form-group input {
   width: 600px;
   max-width: 600px;
+  text-transform: capitalize;
 }
 
 .container-left .lyric-form .create-lyric .form-group .dropdown-menu {

@@ -47,8 +47,40 @@ footer p {
     /*border-color:#78FA89;*/
 /*}*/
 
+/**
+ * Add by phuong ngo
+ */
+/*@font-face {
+  font-family: 'archistico';
+  src: url('/system/assets/fonts/archistico/Archistico_Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Archistico_Simple';
+  src: url('/system/assets/fonts/Archistico_Simple.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'allura';
+  src: url('/system/assets/fonts/allura/Allura-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'alex-brush';
+  src: url('/system/assets/fonts/alex-brush/AlexBrush-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
 .container {
   margin-top: 85px;
+  min-height: 700px;
 }
 
 .top-header {
@@ -83,6 +115,34 @@ footer p {
 
 .top-header .top-description .small-description a, .top-header .top-description .small-description a:hover {
   color: #ccc;
+}
+
+.main-footer {
+  height: 300px;
+  background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px;  
+  width: 100%;
+}
+
+.main-footer .item-footer {
+  width: 25%;
+  float: left;
+  height: inherit;
+  border-right: 2px solid #555;
+}
+
+.main-footer .item-footer:last-child {
+  border-right: none;
+}
+
+.main-footer .item-footer .item-footer-content {
+  color: #fff;
+  padding: 10px;
 }
 
 a:hover {

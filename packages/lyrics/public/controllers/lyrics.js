@@ -105,5 +105,6 @@ angular.module('mean.lyrics').controller('LyricsController', ['$rootScope', '$sc
 
     $scope.initData();
     $scope.loadMore();
+    console.log ($scope);
 	}
 ]);

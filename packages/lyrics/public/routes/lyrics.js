@@ -4,7 +4,7 @@ angular.module('mean.lyrics').config(['$stateProvider',
   function($stateProvider) {
     $stateProvider
       .state('lyrics', {
-        url: '/lyrics/all',
+        url: '/lyrics',
         templateUrl: 'lyrics/views/index.html'
       })
       .state('create lyric', {

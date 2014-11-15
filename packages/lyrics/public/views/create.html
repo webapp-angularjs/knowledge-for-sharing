@@ -12,7 +12,7 @@
             <div class="col-md-8">
               <input name="songName" type="text" class="form-control" data-ng-model="songName" id="song-name" 
               typeahead="song as song.name for song in searchLyrics($viewValue)"
-              placeholder="Song name" title-case-directive required>
+              placeholder="Song name" required>
               <div ng-show="submitted && lyricForm.songName.$invalid" class="help-block">
                 <p ng-show="lyricForm.songName.$error.required">
                   Song name is required
@@ -29,7 +29,7 @@
             <div class="col-md-8">
               <input name="songAuthor" type="text" class="form-control" data-ng-model="songAuthor" id="song-author"
                 typeahead="author as author.name for author in searchAuthors($viewValue)"
-                placeholder="Author" title-case-directive required>
+                placeholder="Author" required>
               <div ng-show="submitted && lyricForm.songAuthor.$invalid" class="help-block">
                 <p ng-show="lyricForm.songAuthor.$error.required">
                   Author is required
