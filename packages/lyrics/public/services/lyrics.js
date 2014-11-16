@@ -16,13 +16,11 @@ angular.module('mean.lyrics')
     function($rootScope, $http, $q, Authors, LyricResource, flashMessage){
     return {
       all: function(from, limit) {
-        limit = limit || 10;
-        from = from || 0;
         var delay = $q.defer();
         $http.get('/lyrics/all', {
           params: {
-            limit: limit,
-            from: from
+            limit: (limit || 10),
+            from: (from || 0)
           }
         }).success(function(data){
           delay.resolve(data);

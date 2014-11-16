@@ -1,14 +1,23 @@
-<div class="search">
-  <form role="search">
-    <div class="form-group">
-      <input type="text" class="form-control set-bg-search" placeholder="Search">
-    </div>
-    <div class="form-button">
-      <button type="submit" class="btn btn-default">
-        <!-- <span class="glyphicon glyphicon-search"></span> -->
-        Search
-      </button>      
-    </div>      
-  </form>
+<div>
+  <div class="items-icon">
+    <a class="btn btn-default" ng-class="{active: viewTemplate === viewDefault}" ng-click="switchView(true)" aria-label="Left Align">
+      <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+    </a>
+    <a class="btn btn-default" ng-class="{active: viewTemplate !== viewDefault}" ng-click="switchView(false)" aria-label="Left Align">
+      <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="search">
+    <form role="search">
+      <div class="form-group">
+        <input type="text" class="form-control set-bg-search" placeholder="Search">
+      </div>
+      <div class="form-button">
+        <button type="submit" class="btn btn-default">
+          Search
+        </button>      
+      </div>      
+    </form>
+  </div>  
 </div>
 <div class="line-break"></div>

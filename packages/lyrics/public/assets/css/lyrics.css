@@ -42,20 +42,20 @@
 .container .line-break {
   border-bottom: 1pt solid #ccc;
   height: 40px;
+  margin: 0 0 10px 0;
 }
 
 .container .search form {
   float: right;
-  /*width: 35.5%;*/
-  /*width: 34%;*/
-  /*margin: 0 -3.3% 0 0;*/
   width: 371px;
 }
 
-.container .search form .form-group {
-  /*width: 68%;*/
+.container .items-icon {
   float: left;
-  /*padding: 0 5px 0 0;*/
+}
+
+.container .search form .form-group {
+  float: left;
   padding: 0 3px 0 0;
   width: 300px;
 }
@@ -164,6 +164,63 @@
   text-align: right;
   padding-right: 5px;
   background-color: #ccc;
+}
+
+.container .container-lyrics .lyric-item {
+  width: 380px;
+  float: left;
+  padding: 0 0 5px 0;
+  cursor: pointer;
+}
+
+.container .container-lyrics .lyric-item .lyric {
+  float: left;
+  padding: 5px 5px 0 5px;
+  border: 1pt solid #ccc;
+
+  background: rgb(254,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(254,255,255,1) 0%, rgba(221,241,249,1) 35%, rgba(160,216,239,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,255,255,1)), color-stop(35%,rgba(221,241,249,1)), color-stop(100%,rgba(160,216,239,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(254,255,255,1) 0%,rgba(221,241,249,1) 35%,rgba(160,216,239,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(254,255,255,1) 0%,rgba(221,241,249,1) 35%,rgba(160,216,239,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(254,255,255,1) 0%,rgba(221,241,249,1) 35%,rgba(160,216,239,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(254,255,255,1) 0%,rgba(221,241,249,1) 35%,rgba(160,216,239,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
+}
+
+.container .container-lyrics .lyric-item .lyric:hover {
+  background: rgb(242,245,246); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(242,245,246,1) 0%, rgba(227,234,237,1) 37%, rgba(200,215,220,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,245,246,1)), color-stop(37%,rgba(227,234,237,1)), color-stop(100%,rgba(200,215,220,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+}
+
+.container .container-lyrics .lyric-item .lyric .author-content-left {
+  float: left;
+  padding: 0 5px 0 0;
+}
+
+.container .container-lyrics .lyric-item .lyric .author-content-right {
+  float: left;
+  width: 273px;
+}
+
+.container .container-lyrics .lyric-item .lyric .author-content-right .lyric-song {
+  font-weight: bold;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+.container .container-lyrics .lyric-item .lyric .author-content-right .lyric-content {
+  font-style: italic;
+}
+
+.container .container-lyrics .lyric-item .lyric .author-content-right .lyric-content a {
+  color: blue;
 }
 
 .set-bg-search {

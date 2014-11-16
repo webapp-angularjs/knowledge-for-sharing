@@ -1,9 +1,6 @@
 <div class="button-letters">
-  <button 
-    type="button" class="btn btn-default" 
-    ng-repeat="letter in alphabet" 
-    ng-click="setActiveLetter(letter)" 
+  <a class="btn btn-default" ng-repeat="letter in alphabet" ng-click="setActiveLetter(letter)" 
     ng-class="{'btn-success': letter===activeLetter, 'btn-all': letter==='All'}">
     {{ letter | uppercase }}
-  </button>
+  </a>
 </div>

@@ -50,7 +50,7 @@ footer p {
 /**
  * Add by phuong ngo
  */
-/*@font-face {
+@font-face {
   font-family: 'archistico';
   src: url('/system/assets/fonts/archistico/Archistico_Bold.ttf') format('truetype');
   font-weight: normal;
@@ -58,7 +58,7 @@ footer p {
 }
 
 @font-face {
-  font-family: 'Archistico_Simple';
+  font-family: 'archistico_simple';
   src: url('/system/assets/fonts/Archistico_Simple.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -77,10 +77,10 @@ footer p {
   font-weight: normal;
   font-style: normal;
 }
-*/
+
 .container {
   margin-top: 85px;
-  min-height: 700px;
+  min-height: 513px;
 }
 
 .top-header {

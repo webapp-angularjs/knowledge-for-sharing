@@ -161,10 +161,10 @@ function generateAvater(text) {
   ctx.fillStyle = "#000000";
   ctx.fillRect(0, 0, width, height - 5);
 
-  ctx.font = 'bold 12pt Arial';
+  ctx.font = 'bold 13pt arial';
   ctx.fillStyle = "#ffffff";
 
-  wrapText(canvas, ctx, text, 2, 30, width, 25);
+  wrapText(canvas, ctx, text, 2, 18, width, 25);
 
   return canvas.toDataURL()
 }

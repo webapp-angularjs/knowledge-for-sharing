@@ -1,11 +1,23 @@
-<section data-ng-controller="LyricsController">
+<section>
   <div class="container">
     <lyric-letters letters="abcdefghijklmnopqrstuvwxyz" on-submit="setFilter">
     </lyric-letters>
-    <lyric-search>
+    <lyric-search view-default="currentViewTemplate">
     </lyric-search>   
     <div class="container-lyrics">
-      
+      <div ng-repeat="lyric in lyrics">
+        <div class="lyric-item">
+          <div class="lyric">
+            <div class="author-content-left">
+              <img ng-src="{{ lyric.avatar }}" class="author-content-avatar"></img>
+            </div>
+            <div class="author-content-right">
+              <div class="lyric-song">{{ lyric.name }}</div>
+              <div class="lyric-content">{{ getTemplateMore(lyric.content, 100) }} <a> more ... </a></div>
+            </div>            
+          </div>                              
+        </div>
+      </div>
     </div> 
   </div>
 </section>

@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('mean.lyrics').controller('LyricsController', ['$rootScope', '$scope', 'Global', 'Lyrics', 'Authors',
-	function($rootScope, $scope, Global, Lyrics, Authors, flashMessage) {
-		$scope.global = Global;
-		$scope.package = {
-			name: 'lyrics'
-		};
+angular.module('mean.lyrics').controller('newCtrl', ['$rootScope', '$scope', 'Global', 'Lyrics', 'Authors', 'flashMessage', 'lyricUtilities',
+  function($rootScope, $scope, Global, Lyrics, Authors, flashMessage, lyricUtilities) {
+    $scope.global = Global;
+    $scope.package = {
+      name: 'lyrics'
+    };
 
     $rootScope.$on('message', function(){
       $scope.initData();
@@ -43,7 +43,7 @@ angular.module('mean.lyrics').controller('LyricsController', ['$rootScope', '$sc
       $scope.busy = false;
       $scope.from = 0;
       $scope.limit = 10;
-      $scope.limit = 5;
+      // $scope.limit = 5;
       $scope.seleted  = -1;      
     }
 
@@ -71,8 +71,9 @@ angular.module('mean.lyrics').controller('LyricsController', ['$rootScope', '$sc
         });
     };
 
-    $scope.getTemplateMore = function(content) {
-      return content.substr(0, 120) + '...' ;
+    $scope.getTemplateMore = function(content, len) {
+      // return content.substr(0, (len || 120)) + '...' ;
+      return lyricUtilities.getTemplateMore(content, len);
     };
 
     $scope.loadMore = function() {
@@ -97,14 +98,9 @@ angular.module('mean.lyrics').controller('LyricsController', ['$rootScope', '$sc
       $scope.seleted = index;
     };
 
-    $scope.setFilter = function(letter) {
-      console.log('--------------------------------------------------------------');
-      console.log('you selected letter:' + letter);
-      console.log('--------------------------------------------------------------');
-    }
-
     $scope.initData();
     $scope.loadMore();
-    console.log ($scope);
-	}
+    console.log('call function from controller createCtrl');
+    console.log(lyricUtilities.updateScope($scope));
+  }
 ]);
