@@ -10,6 +10,7 @@ angular.module('mean.lyrics').controller('indexCtrl', ['$rootScope', '$scope', '
     $rootScope.$on(lyricConstant.EVENT.SWITCH_VIEW, function(event, view) {
       console.log('-------------------------------switchView---------------------------');
       console.log(view);
+      if ($scope.currentViewTemplate !== view) $scope.currentViewTemplate = view;      
       console.log('--------------------------------------------------------------------');
     });
 
@@ -22,8 +23,14 @@ angular.module('mean.lyrics').controller('indexCtrl', ['$rootScope', '$scope', '
       $scope.currentViewTemplate = lyricConstant.TEMPLATE.COLUMN;
     }
 
+    $scope.isViewColumn = function() {
+      return $scope.currentViewTemplate === lyricConstant.TEMPLATE.COLUMN;
+    };
+
     $scope.getTemplateMore = function(content, len) {
-      return lyricUtilities.getTemplateMore(content, len);
+      content = content.substr(0, (len || lyricConstant.LEN_DEFAULT)) + '...';
+      content = content.replace(/\n/g, '<br>');
+      return lyricUtilities.getTemplateMore(content, (len || content.length));
     };
 
     $scope.loadMore = function() {

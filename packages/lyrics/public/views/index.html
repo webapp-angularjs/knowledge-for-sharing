@@ -4,18 +4,34 @@
     </lyric-letters>
     <lyric-search view-default="currentViewTemplate">
     </lyric-search>   
-    <div class="container-lyrics">
-      <div ng-repeat="lyric in lyrics">
-        <div class="lyric-item">
-          <div class="lyric">
-            <div class="author-content-left">
-              <img ng-src="{{ lyric.avatar }}" class="author-content-avatar"></img>
+    <div class="container-lyrics" id="container-lyrics">
+      <div ng-switch on="isViewColumn()">
+        <div ng-switch-when="true">
+          <div ng-repeat="lyric in lyrics">
+            <div class="lyric-item-column mix">
+              <div class="lyric">
+                <div class="author-content-left">
+                  <img ng-src="{{ lyric.avatar }}" class="author-content-avatar"></img>
+                </div>
+                <div class="author-content-right">
+                  <div class="lyric-song">{{ lyric.name }}</div>
+                  <!-- <div class="lyric-content">{{ getTemplateMore(lyric.content, 100) }} <a> more ... </a></div> -->
+                  <div class="lyric-content" ng-bind-html="getTemplateMore(lyric.content, 100)"></div>
+                </div>            
+              </div>                              
             </div>
-            <div class="author-content-right">
-              <div class="lyric-song">{{ lyric.name }}</div>
-              <div class="lyric-content">{{ getTemplateMore(lyric.content, 100) }} <a> more ... </a></div>
-            </div>            
-          </div>                              
+          </div>          
+        </div>
+        <div ng-switch-when="false">
+          <div ng-repeat="lyric in lyrics">
+            <div class="lyric-item-list mix">
+              <div class="lyric">
+                <div class="lyric-song">{{ lyric.name }} - {{ lyric.author.name }} </div>
+                <!-- <div class="lyric-content">{{ getTemplateMore(lyric.content) }} <a> more ... </a></div> -->
+                <div class="lyric-content" ng-bind-html="getTemplateMore(lyric.content)"></div>
+              </div>                              
+            </div>
+          </div>          
         </div>
       </div>
     </div> 

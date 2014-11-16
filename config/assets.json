@@ -19,7 +19,8 @@
         "bower_components/flash-message/flash-message.js",
         "bower_components/my-directives/my-directives.js",
         "bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js",
-        "bower_components/mixitup/src/jquery.mixitup.js"
+        "bower_components/mixitup/src/jquery.mixitup.js",
+        "bower_components/angular-sanitize/angular-sanitize.js"
       ]
     }
   }

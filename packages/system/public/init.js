@@ -17,7 +17,7 @@ for (var index in window.modules) {
 }
 
 // Default modules
-var modules = ['ngCookies', 'ngResource', 'ui.bootstrap', 'ui.router', 'flashMessage', 'myDirectives', 'infinite-scroll'];
+var modules = ['ngCookies', 'ngResource', 'ui.bootstrap', 'ui.router', 'flashMessage', 'myDirectives', 'infinite-scroll', 'ngSanitize'];
 modules = modules.concat(packageModules);
 
 // Combined modules

@@ -166,14 +166,21 @@
   background-color: #ccc;
 }
 
-.container .container-lyrics .lyric-item {
+.container .container-lyrics .lyric-item-column {
   width: 380px;
   float: left;
   padding: 0 0 5px 0;
   cursor: pointer;
 }
 
-.container .container-lyrics .lyric-item .lyric {
+.container .container-lyrics .lyric-item-list {
+  width: 70%;
+  margin: auto;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.container .container-lyrics .lyric-item-column .lyric {
   float: left;
   padding: 5px 5px 0 5px;
   border: 1pt solid #ccc;
@@ -188,7 +195,25 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
 }
 
-.container .container-lyrics .lyric-item .lyric:hover {
+.container .container-lyrics .lyric-item-list .lyric {
+  border: 1px solid #ccc;
+  height: 200px;
+  padding: 5px;
+  border-radius: 5px;  
+}
+
+.container .container-lyrics .lyric-item-list .lyric .lyric-song {
+  color: blue;
+  border-bottom: 2px solid #ccc;
+  font-size: 20px;
+  margin: 0 0 7px 0;
+}
+
+.container .container-lyrics .lyric-item-list .lyric .lyric-content {
+  color: black;
+}
+
+.container .container-lyrics .lyric-item-column .lyric:hover {
   background: rgb(242,245,246); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(242,245,246,1) 0%, rgba(227,234,237,1) 37%, rgba(200,215,220,1) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,245,246,1)), color-stop(37%,rgba(227,234,237,1)), color-stop(100%,rgba(200,215,220,1))); /* Chrome,Safari4+ */
@@ -199,27 +224,29 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
 }
 
-.container .container-lyrics .lyric-item .lyric .author-content-left {
+.container .container-lyrics .lyric-item-column .lyric .author-content-left {
   float: left;
   padding: 0 5px 0 0;
 }
 
-.container .container-lyrics .lyric-item .lyric .author-content-right {
+.container .container-lyrics .lyric-item-column .lyric .author-content-right {
   float: left;
   width: 273px;
 }
 
-.container .container-lyrics .lyric-item .lyric .author-content-right .lyric-song {
+.container .container-lyrics .lyric-item-column .lyric .author-content-right .lyric-song {
   font-weight: bold;
   text-transform: capitalize;
   text-decoration: underline;
 }
 
-.container .container-lyrics .lyric-item .lyric .author-content-right .lyric-content {
+.container .container-lyrics .lyric-item-column .lyric .author-content-right .lyric-content {
   font-style: italic;
+  height: 60px;
+  overflow: hidden;
 }
 
-.container .container-lyrics .lyric-item .lyric .author-content-right .lyric-content a {
+.container .container-lyrics .lyric-item-column .lyric .author-content-right .lyric-content a {
   color: blue;
 }
 

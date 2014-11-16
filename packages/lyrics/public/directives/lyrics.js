@@ -29,6 +29,7 @@ angular.module('mean.lyrics')
         viewDefault: '=viewDefault'
       },
       controller: function($scope) {
+        $scope.viewTemplateDefault = $scope.viewDefault;
         $scope.viewTemplate = $scope.viewDefault;
       },
       link: function(scope, element, attrs) {
