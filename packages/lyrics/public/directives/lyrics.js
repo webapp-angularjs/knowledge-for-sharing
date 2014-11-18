@@ -29,7 +29,7 @@ angular.module('mean.lyrics')
         viewDefault: '=viewDefault'
       },
       controller: function($scope) {
-        $scope.viewTemplateDefault = $scope.viewDefault;
+        $scope.viewTemplateDefault = lyricConstant.TEMPLATE.COLUMN;
         $scope.viewTemplate = $scope.viewDefault;
       },
       link: function(scope, element, attrs) {
@@ -57,4 +57,18 @@ angular.module('mean.lyrics')
         }
       });
     };
+  })
+  .directive('mixitup', function() {
+    return {
+      restrict: 'A',
+      scope: {
+        entities: '='
+      },
+      link: function(scope, element, attrs) {
+        scope.$watch('entities', function() {
+          console.log('entities drawings.....');
+          element.mixItUp();
+        });
+      }
+    }
   });

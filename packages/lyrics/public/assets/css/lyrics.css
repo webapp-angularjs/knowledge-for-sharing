@@ -184,6 +184,7 @@
   float: left;
   padding: 5px 5px 0 5px;
   border: 1pt solid #ccc;
+  border-radius: 5px;  
 
   background: rgb(254,255,255); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(254,255,255,1) 0%, rgba(221,241,249,1) 35%, rgba(160,216,239,1) 100%); /* FF3.6+ */
@@ -200,6 +201,7 @@
   height: 200px;
   padding: 5px;
   border-radius: 5px;  
+  box-shadow: 7px 7px 5px #888888;
 }
 
 .container .container-lyrics .lyric-item-list .lyric .lyric-song {

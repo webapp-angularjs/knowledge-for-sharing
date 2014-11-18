@@ -7,8 +7,8 @@
     <div class="container-lyrics" id="container-lyrics">
       <div ng-switch on="isViewColumn()">
         <div ng-switch-when="true">
-          <div ng-repeat="lyric in lyrics">
-            <div class="lyric-item-column mix">
+          <div ng-repeat="lyric in filtered = (lyrics | customFilter:letterFilter)">
+            <div class="lyric-item-column" data-myorder="{{ lyric.index }}">
               <div class="lyric">
                 <div class="author-content-left">
                   <img ng-src="{{ lyric.avatar }}" class="author-content-avatar"></img>
@@ -20,11 +20,11 @@
                 </div>            
               </div>                              
             </div>
-          </div>          
+          </div>
         </div>
         <div ng-switch-when="false">
-          <div ng-repeat="lyric in lyrics">
-            <div class="lyric-item-list mix">
+          <div ng-repeat="lyric in lyrics | customFilter">
+            <div class="lyric-item-list">
               <div class="lyric">
                 <div class="lyric-song">{{ lyric.name }} - {{ lyric.author.name }} </div>
                 <!-- <div class="lyric-content">{{ getTemplateMore(lyric.content) }} <a> more ... </a></div> -->

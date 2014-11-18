@@ -174,6 +174,7 @@ exports.all = function(req, res) {
     if(err) return res.status(200).json({
       lyrics: []
     });
+    var index = 1;
     res.status(200).json({
       lyrics: _.map(data, function(item) {
         return {
@@ -184,6 +185,7 @@ exports.all = function(req, res) {
             name: item.author.name
           },
           id: item._id,
+          index: index++,
           avatar: generateAvater(item.author.name)
         }
       })

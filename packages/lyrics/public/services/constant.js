@@ -8,8 +8,11 @@ angular.module('mean.lyrics')
         COLUMN: 'column',
         LIST: 'list'
       },
-      EVENT:{
+      EVENT: {
         SWITCH_VIEW: 'switchView'
+      },
+      COOKIES: {
+        VIEW_TEMPLATE: 'lyric.viewTemplate'
       }
     }
   });
