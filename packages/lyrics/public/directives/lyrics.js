@@ -24,9 +24,10 @@ angular.module('mean.lyrics')
   })
   .directive('lyricSearch', ['$rootScope', 'lyricConstant', function($rootScope, lyricConstant) {
     return {
-      restrict: 'E',
+      restrict: 'AE',
       scope: {
-        viewDefault: '=viewDefault'
+        viewDefault: '=viewDefault',
+        searchValue: '='
       },
       controller: function($scope) {
         $scope.viewTemplateDefault = lyricConstant.TEMPLATE.COLUMN;
@@ -43,6 +44,14 @@ angular.module('mean.lyrics')
               break;
           }
           $rootScope.$broadcast(lyricConstant.EVENT.SWITCH_VIEW, scope.viewTemplate);
+        };
+
+        scope.clearSearch = function() {
+          scope.searchValue = null;
+        };
+
+        scope.search = function() {
+          console.log ('searchValue:' + scope.searchValue);
         }
       },
       templateUrl: '/lyrics/directives/templates/search.html'

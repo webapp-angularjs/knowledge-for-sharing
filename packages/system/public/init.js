@@ -18,7 +18,7 @@ for (var index in window.modules) {
 
 // Default modules
 var modules = ['ngCookies', 'ngResource', 'ui.bootstrap', 'ui.router', 'flashMessage', 'myDirectives', 
-  'infinite-scroll', 'ngSanitize', 'ngCookies'];
+  'infinite-scroll', 'ngSanitize', 'ngCookies', 'blockUI', 'pc035860.scrollWatch', 'ngAnimate'];
 modules = modules.concat(packageModules);
 
 // Combined modules

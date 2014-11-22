@@ -2,19 +2,29 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
 {% include '../includes/head.html' %}
 
-<body data-ng-controller="ThemeController" ng-cloak class="ng-cloak" ng-class="state">
+<body data-ng-controller="ThemeController" ng-cloak class="ng-cloak" ng-class="state" id="main-body-content" 
+  scroll-watch="{from: 0, to: 300}" sw-broadcast="{'willShowTopButton': '$percentage >= 20'}">
   <div class="navbar navbar-inverse navbar-fixed-top" data-ng-include="'/system/views/header.html'" data-role="navigation"></div>
+
   {% if adminEnabled %}
   <section class="admin-menu">
     <div data-ng-include="'/mean-admin/views/index.html'"></div>
   </section>
   {% endif %}
+  
   <section class="content">
     <div flash-message></div>
     <section class="container">
       {% block content %}{% endblock %}
     </section>
   </section>
+
+  <div class="to-top" ng-show="$root.showGoToTopButton">
+    <div class="circle-to-top" ng-click="gotoTop()">
+      <span class="glyphicon glyphicon-arrow-up"></span>
+    </div>
+  </div>
+
   {% include '../includes/foot.html' %}
 </body>
 

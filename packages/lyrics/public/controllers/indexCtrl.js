@@ -38,8 +38,9 @@ angular.module('mean.lyrics')
     };
   })
   .controller('indexCtrl', ['$rootScope', '$scope', 'Global', 'Lyrics', 'Authors', 'flashMessage', 
-    'lyricUtilities', 'lyricConstant', '$cookieStore',
-  	function($rootScope, $scope, Global, Lyrics, Authors, flashMessage, lyricUtilities, lyricConstant, $cookieStore) {
+    'lyricUtilities', 'lyricConstant', '$cookieStore', 'blockUI',
+  	function($rootScope, $scope, Global, Lyrics, Authors, flashMessage, lyricUtilities, 
+      lyricConstant, $cookieStore, blockUI) {
   		$scope.global = Global;
   		$scope.package = {
   			name: 'lyrics'
@@ -70,6 +71,7 @@ angular.module('mean.lyrics')
           $scope.currentViewTemplate = lyricConstant.TEMPLATE.COLUMN;
           $cookieStore.put(lyricConstant.COOKIES.VIEW_TEMPLATE, $scope.currentViewTemplate);
         }
+        $scope.search = undefined
       }
 
       $scope.isViewColumn = function() {
@@ -86,6 +88,9 @@ angular.module('mean.lyrics')
         if($scope.busy) return;
         $scope.budy = true;
 
+        var indexBlock = blockUI.instances.get('indexBlock');
+        indexBlock.start();
+
         Lyrics.all($scope.from, $scope.limit).then(function(data) {
           if ($scope.from === 0) {
             $scope.lyrics = data.lyrics;
@@ -94,6 +99,7 @@ angular.module('mean.lyrics')
           }
           $scope.busy = false;
           if (data.lyrics.length !== 0) $scope.from += $scope.limit;
+          indexBlock.stop();
         });      
       };
 
@@ -105,11 +111,11 @@ angular.module('mean.lyrics')
         }
       }
 
+      $scope.openLyric = function(index) {
+        console.log ($scope.lyrics[index]);
+      }
+
       $scope.initData();
       $scope.loadMore();
-      // console.log(lyricUtilities);
-      // console.log($scope);
-      // console.log(lyricUtilities.updateScope($scope));
-      // console.log($scope);
   	}
   ]);

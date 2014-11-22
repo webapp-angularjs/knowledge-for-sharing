@@ -152,3 +152,51 @@ a:hover {
 body {
   background-image: url(/system/assets/img/grid-bg.gif);
 }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.to-top {
+  position: fixed;
+  /*left: 2px;*/
+  /*top: 520px;*/
+  right: 10px;
+  bottom: 10px;
+  width: 70px;
+  height: 70px;
+  z-index: 3000;
+  border-radius: 50%;
+  /*box-shadow: 5px -1px 0 #888888;*/
+  cursor: pointer;  
+
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ccc 0%, #000 100%, red 95%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, #ccc, #000);
+  background-image: radial-gradient(45px 45px 45deg, circle cover, #ccc 0%, #000 100%, red 95%);  
+}
+
+/*.to-top:hover {
+  animation-name: spin; 
+  animation-duration: 3s;
+  animation-iteration-count: infinite; 
+  animation-timing-function: linear;
+
+  -webkit-animation-name: spin; 
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite; 
+  -webkit-animation-timing-function: linear;
+}*/
+
+.to-top .circle-to-top {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 77px;
+  font-size: 46px;
+  color: #fff;  
+}

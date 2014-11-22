@@ -8,9 +8,12 @@
     </a>
   </div>
   <div class="search">
-    <form role="search">
+    <form role="search" ng-submit="search()">
       <div class="form-group">
-        <input type="text" class="form-control set-bg-search" placeholder="Search">
+        <div class="inner-addon right-addon">
+          <i ng-show="searchValue" ng-click="clearSearch()" class="glyphicon glyphicon-remove"></i>
+          <input type="text" class="form-control set-bg-search" ng-model="searchValue" placeholder="Search">
+        </div>
       </div>
       <div class="form-button">
         <button type="submit" class="btn btn-default">
