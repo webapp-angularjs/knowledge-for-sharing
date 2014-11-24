@@ -2,8 +2,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
 {% include '../includes/head.html' %}
 
-<body data-ng-controller="ThemeController" ng-cloak class="ng-cloak" ng-class="state" id="main-body-content" 
-  scroll-watch="{from: 0, to: 300}" sw-broadcast="{'willShowTopButton': '$percentage >= 20'}">
+<body data-ng-controller="ThemeController as themeCtrl" ng-cloak class="ng-cloak" ng-class="state" id="main-body-content" 
+  scroll-watch="{from: 0, to: -1}" sw-broadcast="{'willShowTopButton': '$percentage >= 1', 'load more': '$negative > -400', 'load more end': true}">
   <div class="navbar navbar-inverse navbar-fixed-top" data-ng-include="'/system/views/header.html'" data-role="navigation"></div>
 
   {% if adminEnabled %}

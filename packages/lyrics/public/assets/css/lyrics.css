@@ -167,48 +167,58 @@
 }
 
 .container .container-lyrics .lyric-item-column {
-  width: 380px;
+  width: 100%;
   float: left;
   padding: 0 0 5px 0;
-  cursor: pointer;
 }
 
 .container .container-lyrics .lyric-item-list {
+  width: 100%;
+  padding: 5px;
+}
+
+.container .container-lyrics .lyric-item-list .lists {
   width: 70%;
   margin: auto;
-  padding: 5px;
-  cursor: pointer;
 }
 
 .container .container-lyrics .lyric-item-column .lyric {
+  cursor: pointer;
   float: left;
   padding: 5px 5px 0 5px;
   border: 1pt solid #ccc;
-  border-radius: 5px;  
-
-  background-clip: padding-box;  
+  border-radius: 5px;
+  margin: 2px;
 }
 
-.container .container-lyrics .lyric-item-list .lyric {
+.container .container-lyrics .lyric-item-column .lyric .item {
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+}
+
+.container .container-lyrics .lyric-item-list .lists .lyric {
+  cursor: pointer;
   border: 1px solid #ccc;
   height: 200px;
   padding: 5px;
   border-radius: 5px;  
   box-shadow: 7px 7px 5px #888888;
+  margin: 0 0 10px 0;
 }
 
-.container .container-lyrics .lyric-item-list .lyric .lyric-song {
+.container .container-lyrics .lyric-item-list .lists .lyric .lyric-song {
   color: blue;
   border-bottom: 2px solid #ccc;
   font-size: 20px;
   margin: 0 0 7px 0;
 }
 
-.container .container-lyrics .lyric-item-list .lyric .lyric-content {
+.container .container-lyrics .lyric-item-list .lists .lyric .lyric-content {
   color: black;
 }
 
-.container .container-lyrics .lyric-item-column .lyric:hover {
+.container .container-lyrics .lyric-item-column .lyric:hover, .container .container-lyrics .lyric-item-list .lists .lyric:hover {
   background: rgb(242,245,246); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(242,245,246,1) 0%, rgba(227,234,237,1) 37%, rgba(200,215,220,1) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,245,246,1)), color-stop(37%,rgba(227,234,237,1)), color-stop(100%,rgba(200,215,220,1))); /* Chrome,Safari4+ */
@@ -246,6 +256,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  font-size: 16px;
 }
 
 .container .container-lyrics .lyric-item-column .lyric .author-content-right .lyric-content {
@@ -256,6 +267,47 @@
 
 .container .container-lyrics .lyric-item-column .lyric .author-content-right .lyric-content a {
   color: blue;
+}
+
+/*.container .container-lyrics .view-lyric .lyric {
+  border: 1px solid #fff;
+  border-radius: 3px;
+  width: 75%;
+  margin: auto;
+}
+
+.container .container-lyrics .view-lyric .lyric .lyric-song {
+  color: blue;
+  border-bottom: 1px solid #555;
+  font-size: 21px;
+  text-align: center;
+}
+
+.container .container-lyrics .view-lyric .lyric .lyric-content {
+  color: black;
+  text-align: center;
+}*/
+
+.container .view-lyric-detail {
+  width: 100%;
+  height: 100%;
+}
+
+.container .view-lyric-detail .lyric {
+  width: 70%;
+  margin: auto;
+}
+
+.container .view-lyric-detail .lyric .song-author {
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  font-size: 25px;
+  padding: 0 0 0 5px;
+}
+
+.container .view-lyric-detail .lyric .content {
+  margin-top: 0;
+  padding: 15px 15px 15px 25px;
 }
 
 .set-bg-search {

@@ -18,5 +18,6 @@
 	"universal-selector": false,
 	"unqualified-attributes": false,
 	"duplicate-background-images": false,
-	"bulletproof-font-face": false
+	"bulletproof-font-face": false,
+	"vendor-prefix": false
 }

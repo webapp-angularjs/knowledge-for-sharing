@@ -19,6 +19,9 @@ System.register(function(app, auth, database) {
   System.routes(app, auth, database);
 
   System.aggregateAsset('css', 'common.css');
+  System.aggregateAsset('css', 'ng-animation.css');
+  System.aggregateAsset('css', 'ngview-effect.css');
+  System.aggregateAsset('css', 'my-animation-effects.css');
 
   // The middleware in config/express will run before this code
 

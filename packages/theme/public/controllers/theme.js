@@ -17,6 +17,19 @@ angular.module('mean.theme')
         name: 'theme'
       };
 
+      $scope.scrollInfo = {
+        watch: {
+          from: 0,
+          to: -1
+        },
+        broadcast: {
+          'load more': '$negative > -400',
+          'load more end': true,
+          'willShowTopButton': '$percentage >= 20'
+        }
+      }
+
+
       $rootScope.showGoToTopButton = false;
 
       $scope.$on('willShowTopButton', function($evt, active, locals) {

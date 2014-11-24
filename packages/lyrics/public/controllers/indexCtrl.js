@@ -38,9 +38,9 @@ angular.module('mean.lyrics')
     };
   })
   .controller('indexCtrl', ['$rootScope', '$scope', 'Global', 'Lyrics', 'Authors', 'flashMessage', 
-    'lyricUtilities', 'lyricConstant', '$cookieStore', 'blockUI',
+    'lyricUtilities', 'lyricConstant', '$cookieStore', 'blockUI', '$timeout',
   	function($rootScope, $scope, Global, Lyrics, Authors, flashMessage, lyricUtilities, 
-      lyricConstant, $cookieStore, blockUI) {
+      lyricConstant, $cookieStore, blockUI, $timeout) {
   		$scope.global = Global;
   		$scope.package = {
   			name: 'lyrics'
@@ -51,11 +51,33 @@ angular.module('mean.lyrics')
           $scope.currentViewTemplate = view;
           $cookieStore.put(lyricConstant.COOKIES.VIEW_TEMPLATE, $scope.currentViewTemplate);
         }        
+        $scope.resetViewLyric()
+      });
+
+      $scope.$on('willShowTopButton', function ($evt, n, locals) {
+        // For the "end" button
+        if (locals.$progress == 1) {
+          $scope.$apply(function () {
+            $scope.items.load(50);
+          });
+        }
+      });      
+
+      $scope.$on('load more', function () {
+        $scope.loadMore();
       });
 
       $scope.getRandomSpan = function() {
         return Math.floor((Math.random()*6)+1);
       };
+
+      $scope.resetViewLyric = function() {
+        $scope.viewLyric = {
+          name: undefined,
+          author: undefined,
+          content: undefined
+        }        
+      }
 
       $scope.initData = function(){
         $scope.busy = false;
@@ -72,6 +94,7 @@ angular.module('mean.lyrics')
           $cookieStore.put(lyricConstant.COOKIES.VIEW_TEMPLATE, $scope.currentViewTemplate);
         }
         $scope.search = undefined
+        $scope.resetViewLyric()
       }
 
       $scope.isViewColumn = function() {
@@ -109,11 +132,22 @@ angular.module('mean.lyrics')
         } else {
           $scope.letterFilter = letter.toLowerCase();
         }
-      }
+      };
 
       $scope.openLyric = function(index) {
         console.log ($scope.lyrics[index]);
-      }
+        $scope.viewLyric.name = $scope.lyrics[index].name;
+        $scope.viewLyric.author = $scope.lyrics[index].author.name;
+        $scope.viewLyric.content = $scope.lyrics[index].content.replace(/\n/g, '<br>');
+      };
+
+      $scope.donedLoad = function(index) {
+        console.log('-->' + index + ':' + $scope.lyrics.length);
+        if (index + 1 === $scope.lyrics.length) {
+          return true;
+        }
+        return false
+      };
 
       $scope.initData();
       $scope.loadMore();
