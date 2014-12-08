@@ -98,3 +98,117 @@ body {
   color: #ccc;
   text-decoration: none;
 }
+
+/**
+ * Top Button
+ */
+ .to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  width: 70px;
+  height: 70px;
+  z-index: 3000;
+  border-radius: 50%;
+  cursor: pointer;  
+
+  background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ccc 0%, #000 100%, red 95%);
+  background-image: -webkit-radial-gradient(45px 45px, circle cover, #ccc, #000);
+  background-image: radial-gradient(45px 45px 45deg, circle cover, #ccc 0%, #000 100%, red 95%);  
+}
+
+.to-top.comeIn {
+  display: block;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 3s;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+}
+
+.to-top.comeOut {
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-duration: 3s;
+  animation-name: fadeOut;
+  animation-duration: 3s;
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }  
+  to { 
+    opacity: 1; 
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }  
+  to { 
+    opacity: 1; 
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }  
+  to { 
+    opacity: 1; 
+  }
+}
+
+@-o-keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }  
+  to { 
+    opacity: 1; 
+  }
+}
+
+@keyframes fadeOut {
+  from { 
+    opacity: 1; 
+  }  
+  to { 
+    opacity: 0; 
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from { 
+    opacity: 1; 
+  }  
+  to { 
+    opacity: 0; 
+  }
+}
+
+@-moz-keyframes fadeOut {
+  from { 
+    opacity: 1; 
+  }  
+  to { 
+    opacity: 0; 
+  }
+}
+
+@-o-keyframes fadeOut {
+  from { 
+    opacity: 1; 
+  }  
+  to { 
+    opacity: 0; 
+  }
+}
+
+.to-top .circle-to-top {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 77px;
+  font-size: 46px;
+  color: #fff;  
+}

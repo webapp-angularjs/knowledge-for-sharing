@@ -18,6 +18,8 @@ for (var index in window.modules) {
 
 // Default modules
 var modules = ['ngCookies', 'ngResource', 'ui.bootstrap', 'ui.router'];
+modules.push('pc035860.scrollWatch');
+
 modules = modules.concat(packageModules);
 
 // Combined modules
