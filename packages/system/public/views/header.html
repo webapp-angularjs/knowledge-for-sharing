@@ -1,8 +1,15 @@
-<div class="page-header" data-ng-controller="HeaderController">
-  <div class="logo pull-left">
-    <a class="navbar-brand" ui-sref="home" mean-token="'site-title'">MEAN</a>
+<div class="top-header">
+  <div class="top-description">
+    <div class="large-description">
+      <a href="/"> knowledge for sharing </a>
+    </div>
+    <div class="small-description">
+      <a href="/"> someone know everyone will learn </a>
+    </div>
   </div>
+</div>
 
+<div class="page-header" data-ng-controller="HeaderController">
   <div class="left pull-left">
     <ul class="navbar-nav nav">
       <li data-ng-repeat="item in menus.main" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">

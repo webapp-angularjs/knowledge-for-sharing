@@ -16,5 +16,8 @@
 	"text-indent": false,
 	"unique-headings": false,
 	"universal-selector": false,
-	"unqualified-attributes": false
+	"unqualified-attributes": false,
+	"duplicate-background-images": false,
+	"bulletproof-font-face": false,
+	"vendor-prefix": false
 }
