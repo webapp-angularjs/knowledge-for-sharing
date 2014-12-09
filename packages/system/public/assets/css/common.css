@@ -118,18 +118,18 @@ body {
 }
 
 .to-top.comeIn {
-  display: block;
-  -webkit-animation-name: fadeIn;
+/*  -webkit-animation-name: fadeIn;
   -webkit-animation-duration: 3s;
   animation-name: fadeIn;
-  animation-duration: 3s;
+  animation-duration: 3s;*/
+  display: block;
 }
 
 .to-top.comeOut {
-  -webkit-animation-name: fadeOut;
+/*  -webkit-animation-name: fadeOut;
   -webkit-animation-duration: 3s;
   animation-name: fadeOut;
-  animation-duration: 3s;
+  animation-duration: 3s;*/
   display: none;
 }
 
